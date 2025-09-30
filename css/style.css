@@ -76,10 +76,6 @@ body {
     background-color: #fff;
 }
 
-#wrap{
-    overflow-x: hidden;
-}
-
 /* 폰트 공통스타일 */
 .small_title {
     font-size: 20px;
@@ -2019,3 +2015,4 @@ header {
     }
 
 }
+
