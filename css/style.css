@@ -1697,7 +1697,7 @@ header {
     }
 
     .gnb {
-        right: -280px; /* 더 작은 화면용 */
+        right: -300px;
         width: 260px;
         padding: 30px 20px;
     }
@@ -1708,7 +1708,7 @@ header {
 
     #section1 .text_wrap {
         margin-bottom: 56px;
-        margin-top: 440px;
+        margin-top: 400px;
     }
 
     #section1 .text_wrap .subtitle {
@@ -2018,5 +2018,4 @@ header {
     .footer_info_wrap .footer_info_1, .footer_info_wrap .footer_info_2 {
         gap: 12px;
     }
-
 }
