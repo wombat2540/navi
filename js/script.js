@@ -427,7 +427,7 @@ document.querySelectorAll('.gnb li:not(.language_selector)').forEach(item => {
         if (window.innerWidth <= 820) {
             gnb.classList.remove('active');
             hamburger.classList.remove('active');
-            document.body.style.overflow = '';
+            document.body.classList.remove('menu-open');
         }
     });
 });
@@ -438,7 +438,7 @@ document.addEventListener('click', function(e) {
         if (!gnb.contains(e.target) && !hamburger.contains(e.target) && gnb.classList.contains('active')) {
             gnb.classList.remove('active');
             hamburger.classList.remove('active');
-            document.body.style.overflow = '';
+            document.body.classList.remove('menu-open');
         }
     }
 });
@@ -474,18 +474,20 @@ if (hamburger) {
         this.classList.toggle('active');
         gnb.classList.toggle('active');
         
-        if (gnb.classList.contains('active')) {
-            scrollPosition = window.pageYOffset;
-            document.body.style.overflow = 'hidden';
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${scrollPosition}px`;
-            document.body.style.width = '100%';
-        } else {
-            document.body.style.removeProperty('overflow');
-            document.body.style.removeProperty('position');
-            document.body.style.removeProperty('top');
-            document.body.style.removeProperty('width');
-            window.scrollTo(0, scrollPosition);
-        }
+        // 간단하게 body에 클래스만 추가/제거
+        document.body.classList.toggle('menu-open');
+    });
+}
+
+if (hamburger) {
+    // 클릭과 터치 이벤트 모두 처리
+    ['click', 'touchstart'].forEach(eventType => {
+        hamburger.addEventListener(eventType, function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            this.classList.toggle('active');
+            gnb.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
     });
 }

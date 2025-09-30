@@ -306,6 +306,11 @@ header {
     display: block;
 }
 
+.menu-open {
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+
 /* ---------
 섹션1 디자인 (메인 배너)
 ---------- */
@@ -1419,12 +1424,14 @@ header {
 
     .hamburger {
         display: flex;
+        position: relative; /* fixed 제거 */
+        z-index: 1002; /* gnb보다 높게 */
     }
 
     .gnb {
         position: fixed;
         top: 68px;
-        right: -100vw; /* 화면 전체 너비만큼 오른쪽으로 */
+        right: -100%;
         width: 280px;
         height: calc(100vh - 68px);
         background-color: #2E2D28;
@@ -1435,7 +1442,7 @@ header {
         transition: right 0.3s ease;
         box-shadow: -4px 0 20px rgba(46, 45, 40, 0.1);
         overflow-y: auto;
-        z-index: 1000;
+        z-index: 1001;
     }
 
 
