@@ -1455,11 +1455,18 @@ header {
         width: 100%;
         padding: 12px 0;
         border-bottom: 1px solid rgba(201, 100, 77, 0.1);
+        color: #FFF6E4;
+        font-weight: 300;
     }
 
     .gnb li:last-child {
         border-bottom: none;
     }
+
+    .gnb li:hover,
+    .lang:hover {
+    color: #C9644D;
+}
 
     .language_selector {
         margin-top: 20px;
@@ -1467,15 +1474,27 @@ header {
 
     .language_dropdown {
         position: static;
-        margin-top: 12px;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
+        margin-top: 0; 
+        opacity: 0; 
+        visibility: hidden;
+        transform: translateY(-10px);
         box-shadow: none;
         border: none;
+        max-height: 0; 
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .language_dropdown.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        max-height: 200px;
+        margin-top: 12px;
     }
 
-        .gnb.active ~ .menu-overlay {
+
+    .gnb.active ~ .menu-overlay {
         display: block;
     }
 
