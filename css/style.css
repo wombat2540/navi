@@ -164,7 +164,6 @@ header {
     cursor: pointer;
     font-size: 16px;
     font-weight: 500;
-    /* transition: color 0.3s ease; */
 }
 
 .gnb li:hover {
@@ -321,7 +320,6 @@ header {
     flex-direction: column;
     align-items: center;
     min-height: 600px;
-    /* 최소 높이 설정 */
 }
 
 /* 슬라이드 컨테이너 */
@@ -409,20 +407,15 @@ header {
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
-    /* transition: all 0.3s ease; */
     font-family: 'Pretendard', sans-serif;
 }
 
 #section1 .text_wrap .cta_button:hover {
     background-color: #3B928F;
-    /* transform: translateY(-2px); */
 }
 
 /* 슬라이드 컨트롤러 */
 .slide_controls {
-    /* position: absolute;
-    bottom: 40px;
-    left: 40px; */
     margin-top: 32px;
     display: flex;
     align-items: center;
@@ -443,7 +436,6 @@ header {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 2px;
     cursor: pointer;
-    /* transition: all 0.3s ease; */
     position: relative;
     overflow: hidden;
 }
@@ -485,7 +477,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* transition: all 0.3s ease; */
     backdrop-filter: blur(10px);
 }
 
@@ -499,7 +490,6 @@ header {
     object-fit: contain;
 }
 
-/* 기존 ::before 스타일 제거 */
 .play_pause_btn.pause::before,
 .play_pause_btn.play::before {
     display: none;
@@ -624,7 +614,6 @@ header {
     position: relative;
     width: 100%;
     padding-bottom: 120%;
-    /* 비율 유지 (높이를 너비의 120%로) */
     perspective: 1000px;
     margin-bottom: 16px;
 }
@@ -682,7 +671,6 @@ header {
 /* 룸 타입 컨테이너 */
 .room_types_container {
     display: flex;
-    /* flex-direction: column; */
     gap: 70px;
     max-width: 1320px;
 }
@@ -834,7 +822,6 @@ header {
 .section5-sticky-container {
     position: sticky;
     top: 0;
-    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -859,10 +846,6 @@ header {
 
 .nav_item {
     padding: 12px 0px;
-}
-
-.nav_item.active {
-    /* background-color: #E5C78D; */
 }
 
 .nav_item.active .nav_text {
@@ -898,7 +881,6 @@ header {
     height: 100%;
     opacity: 0;
     transform: translateY(4px);
-    /* transition: all 0.6s ease-in-out; */
     transition: all 0.4s;
     pointer-events: none;
     display: flex;
@@ -1415,18 +1397,20 @@ header {
 
 @media (max-width: 820px) {
 
-    #wrap{
-    overflow-x: hidden;
-}
+    #wrap {
+        overflow-x: hidden;
+    }
 
-    .nav{
+    .nav {
         max-width: 820px;
     }
 
     .hamburger {
         display: flex;
-        position: relative; /* fixed 제거 */
-        z-index: 1002; /* gnb보다 높게 */
+        position: relative;
+        /* fixed 제거 */
+        z-index: 1002;
+        /* gnb보다 높게 */
     }
 
     .gnb {
@@ -1446,14 +1430,13 @@ header {
         z-index: 1001;
     }
 
-
     .gnb.active {
         right: 0;
     }
 
     .gnb li {
         width: 100%;
-        padding: 12px 0;
+        padding-bottom: 24px;
         border-bottom: 1px solid rgba(201, 100, 77, 0.1);
         color: #FFF6E4;
         font-weight: 300;
@@ -1465,26 +1448,23 @@ header {
 
     .gnb li:hover,
     .lang:hover {
-    color: #C9644D;
-}
-
-    .language_selector {
-        margin-top: 20px;
+        color: #C9644D;
     }
+
 
     .language_dropdown {
         position: static;
-        margin-top: 0; 
-        opacity: 0; 
+        margin-top: 0;
+        opacity: 0;
         visibility: hidden;
         transform: translateY(-10px);
         box-shadow: none;
         border: none;
-        max-height: 0; 
+        max-height: 0;
         overflow: hidden;
         transition: all 0.3s ease;
     }
-    
+
     .language_dropdown.show {
         opacity: 1;
         visibility: visible;
@@ -1494,7 +1474,7 @@ header {
     }
 
 
-    .gnb.active ~ .menu-overlay {
+    .gnb.active~.menu-overlay {
         display: block;
     }
 
@@ -1711,7 +1691,7 @@ header {
 
 @media (max-width: 480px) {
 
-    .nav{
+    .nav {
         max-width: 480px;
     }
 
@@ -1923,11 +1903,9 @@ header {
         padding: 8px 12px;
     }
 
-        #section5 .nav_item.active .nav_text {
+    #section5 .nav_item.active .nav_text {
         font-weight: 700;
     }
-
-
 
     .section5-sticky-container {
         padding: 0;
@@ -2015,26 +1993,27 @@ header {
         font-size: 15px;
     }
 
-    #section8{
+    #section8 {
         font-size: 13px;
     }
 
-        .contact_info .phone_number {
+    .contact_info .phone_number {
         font-size: 28px;
         line-height: 38px;
     }
 
-        .contact_info .contact_email {
+    .contact_info .contact_email {
         margin-bottom: 4px;
     }
 
     .footer_link_wrap .footer_link {
-    margin-right: 12px;
-    font-size: 14px;
-    line-height: 20px;
-}
+        margin-right: 12px;
+        font-size: 14px;
+        line-height: 20px;
+    }
 
-    .footer_info_wrap .footer_info_1, .footer_info_wrap .footer_info_2 {
+    .footer_info_wrap .footer_info_1,
+    .footer_info_wrap .footer_info_2 {
         gap: 12px;
     }
 }
