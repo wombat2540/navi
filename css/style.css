@@ -75,6 +75,11 @@ body {
     line-height: 24px;
     position: relative;
     background-color: #fff;
+    overflow-x: hidden;
+}
+
+.wrap{
+    overflow-x: hidden;
 }
 
 /* 폰트 공통스타일 */
@@ -1955,4 +1960,5 @@ header {
         padding: 8px 12px;
         font-size: 15px;
     }
+
 }
