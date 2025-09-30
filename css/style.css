@@ -1583,7 +1583,6 @@ header {
 
     #section5 .nav_item.active .nav_text {
         color: #C9644D;
-        border-bottom: #C9644D 1.5px solid;
         padding-bottom: 12px;
     }
 
@@ -2018,4 +2017,5 @@ header {
     .footer_info_wrap .footer_info_1, .footer_info_wrap .footer_info_2 {
         gap: 12px;
     }
+
 }
