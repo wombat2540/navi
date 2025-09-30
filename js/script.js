@@ -464,3 +464,28 @@ document.querySelectorAll('.nav_item').forEach(item => {
         }
     });
 });
+
+// 터치 이벤트도 막기
+let scrollPosition = 0;
+
+if (hamburger) {
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        gnb.classList.toggle('active');
+        
+        if (gnb.classList.contains('active')) {
+            scrollPosition = window.pageYOffset;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPosition}px`;
+            document.body.style.width = '100%';
+        } else {
+            document.body.style.removeProperty('overflow');
+            document.body.style.removeProperty('position');
+            document.body.style.removeProperty('top');
+            document.body.style.removeProperty('width');
+            window.scrollTo(0, scrollPosition);
+        }
+    });
+}
