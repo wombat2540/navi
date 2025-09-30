@@ -76,7 +76,7 @@ body {
     background-color: #fff;
 }
 
-.wrap{
+#wrap{
     overflow-x: hidden;
 }
 
@@ -2018,4 +2018,5 @@ header {
     .footer_info_wrap .footer_info_1, .footer_info_wrap .footer_info_2 {
         gap: 12px;
     }
+
 }
