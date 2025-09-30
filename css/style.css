@@ -1422,7 +1422,7 @@ header {
         background-color: #2E2D28;
         flex-direction: column;
         padding: 40px 30px;
-        gap: 24px;
+        gap: 16px;
         align-items: flex-start;
         transition: right 0.3s ease;
         box-shadow: -4px 0 20px rgba(46, 45, 40, 0.1);
@@ -1436,7 +1436,7 @@ header {
 
     .gnb li {
         width: 100%;
-        padding-bottom: 24px;
+        padding-bottom: 16px;
         border-bottom: 1px solid rgba(201, 100, 77, 0.1);
         color: #FFF6E4;
         font-weight: 300;
