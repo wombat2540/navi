@@ -1693,12 +1693,20 @@ header {
 
     .nav {
         max-width: 480px;
+        height: 56px;
     }
 
+    .logo img{
+        height: 20px;
+    }
     .gnb {
         right: -300px;
         width: 260px;
         padding: 30px 20px;
+    }
+
+    .hamburger {
+        width: 24px;
     }
 
     #section1 {
@@ -1801,11 +1809,12 @@ header {
         width: 100%;
     }
 
+    #section2,
     #section3,
     #section4,
     #section5,
     #section6 {
-        padding: 32px 20px 56px;
+        padding: 56px 20px 70px;
     }
 
     #section3 .content {
