@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-// 언어 드롭다운 (완전히 새로운 접근)
+// 언어 드롭다운
 const langSelector = document.querySelector('.language_selector');
 const dropdown = document.querySelector('.language_dropdown');
 const arrow = document.querySelector('.lang-arrow');
@@ -357,4 +357,84 @@ if (langSelector && dropdown) {
     });
 }
     
+});
+
+ document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('header');
+    const firstSection = document.querySelector('#section1'); // 메인 섹션 ID
+    let lastScrollY = window.scrollY || window.pageYOffset;
+    const HIDE_START_Y = 150; // 이 정도 스크롤 내려간 이후부터만 숨김 동작
+
+    /* ===== 1) 메인 섹션 기준으로 색/배경 바꾸기 (이전 로직 유지) ===== */
+    if (firstSection && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // 메인 섹션이 화면에 보일 때 → 그라데이션
+              header.classList.remove('scrolled');
+            } else {
+              // 메인 섹션 거의 안 보일 때 → 흰색 헤더
+              header.classList.add('scrolled');
+            }
+          });
+        },
+        {
+          threshold: 0.3
+        }
+      );
+
+      observer.observe(firstSection);
+    } else {
+      // fallback: 단순 높이 기준
+      const heroHeight = firstSection ? firstSection.offsetHeight : 200;
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY || window.pageYOffset;
+
+        if (scrollY > heroHeight - 80) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    }
+
+    /* ===== 2) 스크롤 방향에 따라 헤더 숨기기 / 다시 보이기 ===== */
+    window.addEventListener('scroll', () => {
+      const currentY = window.scrollY || window.pageYOffset;
+
+      // 맨 위 근처에서는 무조건 헤더 보이게
+      if (currentY < 10) {
+        header.classList.remove('header-hidden');
+        lastScrollY = currentY;
+        return;
+      }
+
+      // 아래로 스크롤 중 + 어느 정도 내려온 상태면 헤더 숨김
+      if (currentY > lastScrollY && currentY > HIDE_START_Y) {
+        header.classList.add('header-hidden');
+      } else if (currentY < lastScrollY) {
+        // 위로 스크롤 중이면 다시 보여주기
+        header.classList.remove('header-hidden');
+      }
+
+      lastScrollY = currentY;
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector("header");
+  const nav = document.querySelector(".nav");
+
+  nav.addEventListener("mouseenter", () => {
+    // 메인일 때만 hover-white 적용
+    if (!header.classList.contains("scrolled")) {
+      header.classList.add("hover-white");
+    }
+  });
+
+  nav.addEventListener("mouseleave", () => {
+    header.classList.remove("hover-white");
+  });
 });
